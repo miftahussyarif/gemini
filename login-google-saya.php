@@ -304,3 +304,8 @@ class Simple_Google_Login {
 
 // Inisialisasi plugin
 new Simple_Google_Login();
+
+new SGL_Plugin_Updater(
+    __FILE__,
+    'https://gist.githubusercontent.com/miftahussyarif/gemini/raw/info.json'
+);
