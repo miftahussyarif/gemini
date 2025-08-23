@@ -1,17 +1,17 @@
 {
   "name": "Login dengan Akun Google",
   "version": "1.1.0",
-  "download_url": "https://github.com/miftahussyarif/gemini/archive/refs/heads/main.zip",
+  "download_url": "https://github.com/miftahussyarif/gemini/raw/main/login-google-saya.zip",
   "homepage": "https://github.com/miftahussyarif/gemini",
   "requires": "5.0",
   "tested": "6.4",
-  "last_updated": "2025-08-23 14:00:00",
+  "last_updated": "2025-08-23 14:53:00",
   "sections": {
-    "description": "Deskripsi lengkap plugin Anda. Bisa berisi beberapa paragraf.",
+    "description": "Menambahkan tombol login dengan Google di halaman login WordPress dan WooCommerce, serta menyediakan widget.",
     "changelog": "<h4>Versi 1.1.0</h4><ul><li>Memperbaiki tampilan tombol agar lebih menarik.</li><li>Menambahkan fitur widget untuk fleksibilitas penempatan.</li><li>Menambahkan mekanisme auto-updater.</li></ul>"
   },
   "banners": {
-      "low": "https://example.com/path/to/banner-772x250.png",
-      "high": "https://example.com/path/to/banner-1544x500.png"
+      "low": "",
+      "high": ""
   }
 }
