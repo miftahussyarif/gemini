@@ -2,9 +2,9 @@
 /**
  * Plugin Name:       Login dengan Akun Google
  * Description:       Menambahkan tombol login dengan Google di halaman login WordPress dan WooCommerce, serta menyediakan widget.
- * Version:           1.1.0
- * Author:            Gemini
- * Author URI:        https://google.com
+ * Version:           1.1.1
+ * Author:            Gemini & Miftahus Syarif
+ * Author URI:        https://github.com/miftahussyarif/gemini
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       google-login
@@ -59,12 +59,28 @@ class Simple_Google_Login {
             register_widget('Simple_Google_Login_Widget');
         });
         
-        // Memuat updater
-        require_once plugin_dir_path(__FILE__) . 'updater.php';
-        new SGL_Plugin_Updater(
-            __FILE__,
-            'https://gist.githubusercontent.com/your-username/your-gist-id/raw/info.json' // GANTI URL INI!
-        );
+        // Memuat updater dengan aman
+        add_action('admin_init', [$this, 'load_updater']);
+    }
+
+    /**
+     * Memuat file updater dengan aman, hanya di halaman admin.
+     */
+    public function load_updater() {
+        // Path ke file updater
+        $updater_file = plugin_dir_path(__FILE__) . 'updater.php';
+
+        // Periksa apakah file updater ada sebelum memuatnya
+        if (file_exists($updater_file)) {
+            require_once $updater_file;
+            // Inisialisasi updater hanya jika kelasnya ada
+            if (class_exists('SGL_Plugin_Updater')) {
+                new SGL_Plugin_Updater(
+                    __FILE__,
+                    'https://raw.githubusercontent.com/miftahussyarif/gemini/main/info.json'
+                );
+            }
+        }
     }
 
     /**
